@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Shop - 竺柳汝</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .shop-header {
             position: relative;
-            height: 40vh;
+            height: 60vh;
             overflow: hidden;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(45deg, #1a1a1a, #2c3e50);
         }
 
         .shop-header-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            opacity: 0.7;
+            mix-blend-mode: overlay;
         }
 
         .shop-header-content {
@@ -28,35 +31,73 @@
             text-align: center;
             color: white;
             width: 90%;
+            z-index: 2;
         }
 
         .shop-title {
-            font-size: 3rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .shop-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 1rem;
         }
 
         .category-filter {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            margin: 0 -2rem 2rem -2rem;
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin: 2rem 0;
             flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .filter-btn {
             padding: 0.8rem 1.5rem;
             border: none;
-            background: var(--light-bg);
+            background: transparent;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
             background: var(--accent-color);
-            color: white;
+            transition: width 0.3s ease;
+        }
+
+        .filter-btn:hover::after,
+        .filter-btn.active::after {
+            width: 80%;
+        }
+
+        .filter-btn.active {
+            color: var(--accent-color);
+            font-weight: 500;
         }
 
         .shop-grid {
@@ -68,20 +109,23 @@
 
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .product-image-container {
             position: relative;
             padding-top: 100%;
             overflow: hidden;
+            background: #f8f9fa;
         }
 
         .product-image {
@@ -91,53 +135,118 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
+            position: relative;
         }
 
         .product-category {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
 
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
         .product-price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin: 1rem 0;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-currency {
+            font-size: 1rem;
+            color: #666;
         }
 
         .buy-btn {
-            display: inline-block;
             width: 100%;
             padding: 1rem;
             background: var(--accent-color);
             color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
             border: none;
+            border-radius: 15px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .buy-btn:hover {
             background: var(--primary-color);
             transform: translateY(-2px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(231, 76, 60, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        .stock-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2ecc71;
+        }
+
+        @media (max-width: 768px) {
+            .shop-title {
+                font-size: 3rem;
+            }
+            
+            .shop-header {
+                height: 40vh;
+            }
+
+            .product-card {
+                margin: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -171,22 +280,23 @@
                  alt="Art Shop Banner" 
                  class="shop-header-image">
             <div class="shop-header-content">
-                <h1 class="shop-title">Art Shop</h1>
-                <p>Explore Unique Artworks</p>
+                <h1 class="shop-title">Art Collection</h1>
+                <p class="shop-subtitle">Curated Masterpieces</p>
             </div>
         </div>
 
         <div class="category-filter">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Prints</button>
-            <button class="filter-btn">Originals</button>
-            <button class="filter-btn">Limited Edition</button>
-            <button class="filter-btn">Digital Art</button>
+            <button class="filter-btn active">All Works</button>
+            <button class="filter-btn">Limited Prints</button>
+            <button class="filter-btn">Original Art</button>
+            <button class="filter-btn">Digital Works</button>
+            <button class="filter-btn">Sculptures</button>
         </div>
 
         <div class="shop-grid">
             <!-- Product 1 -->
             <div class="product-card">
+                <div class="product-badge">Limited Edition</div>
                 <div class="product-image-container">
                     <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" 
                          alt="Urban Dreams Artwork" 
@@ -195,14 +305,24 @@
                 <div class="product-info">
                     <span class="product-category">Limited Edition Print</span>
                     <h3 class="product-title">Urban Dreams #1</h3>
-                    <p>Limited Edition Print (50/100)</p>
-                    <p class="product-price">$980</p>
-                    <button class="buy-btn">Add to Cart</button>
+                    <p class="product-description">A stunning capture of city life through abstract expression. Limited to 100 prints.</p>
+                    <div class="stock-status">
+                        <span class="stock-dot"></span>
+                        <span>50 prints available</span>
+                    </div>
+                    <p class="product-price">
+                        <span class="price-currency">$</span>980
+                    </p>
+                    <button class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
                 </div>
             </div>
 
             <!-- Product 2 -->
             <div class="product-card">
+                <div class="product-badge">Original</div>
                 <div class="product-image-container">
                     <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853" 
                          alt="Nature's Whisper" 
@@ -211,9 +331,18 @@
                 <div class="product-info">
                     <span class="product-category">Original Oil Painting</span>
                     <h3 class="product-title">Nature's Whisper</h3>
-                    <p>Original Oil Painting</p>
-                    <p class="product-price">$1,580</p>
-                    <button class="buy-btn">Add to Cart</button>
+                    <p class="product-description">An original oil painting capturing the essence of natural beauty.</p>
+                    <div class="stock-status">
+                        <span class="stock-dot"></span>
+                        <span>One of a kind</span>
+                    </div>
+                    <p class="product-price">
+                        <span class="price-currency">$</span>1,580
+                    </p>
+                    <button class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
                 </div>
             </div>
 
@@ -227,9 +356,18 @@
                 <div class="product-info">
                     <span class="product-category">Digital Art</span>
                     <h3 class="product-title">Digital Flow</h3>
-                    <p>High-Quality Fine Art Print</p>
-                    <p class="product-price">$580</p>
-                    <button class="buy-btn">Add to Cart</button>
+                    <p class="product-description">A mesmerizing digital artwork printed on museum-quality paper.</p>
+                    <div class="stock-status">
+                        <span class="stock-dot"></span>
+                        <span>In Stock</span>
+                    </div>
+                    <p class="product-price">
+                        <span class="price-currency">$</span>580
+                    </p>
+                    <button class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
                 </div>
             </div>
         </div>

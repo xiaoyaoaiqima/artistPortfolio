@@ -9,68 +9,126 @@
         /* ... (keeping same base styles as index.html) ... */
 
         .press-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 2rem;
         }
 
         .press-item {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .press-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
         }
 
         .press-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .publication-logo {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-right: 1.5rem;
+        .publication-info {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .press-date {
             color: #3498db;
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .publication-name {
+            color: #666;
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .publication-name::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
         }
 
         .press-title {
+            font-size: 1.8rem;
             color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .press-excerpt {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .read-more:hover {
-            color: #2980b9;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
         .featured-quote {
             font-style: italic;
             font-size: 1.2rem;
             color: #7f8c8d;
-            padding: 1rem;
-            border-left: 4px solid #3498db;
-            margin: 1rem 0;
+            padding: 1rem 0;
+            border-left: none;
+            position: relative;
+        }
+
+        .press-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .publication-logo {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .press-excerpt {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more .arrow {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #2980b9;
+        }
+
+        .read-more:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .press-content {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-logo {
+                height: 200px;
+            }
+
+            .press-item {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -101,65 +159,29 @@
         <h1 class="section-title">Press & Media Coverage</h1>
 
         <div class="press-container">
-            <!-- Press Item 1 -->
             <div class="press-item">
                 <div class="press-header">
+                    <div class="publication-info">
+                        <span class="press-date">June 15, 2024</span>
+                        <span class="publication-name">Art Magazine International</span>
+                    </div>
+                    <h2 class="press-title">Emerging Artist Redefines Contemporary Art</h2>
+                    <div class="featured-quote">
+                        "A groundbreaking approach to mixing traditional and digital techniques..."
+                    </div>
+                </div>
+                <div class="press-content">
                     <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Art Magazine Logo" class="publication-logo">
-                    <div>
-                        <p class="press-date">June 15, 2024</p>
-                        <h2 class="press-title">Emerging Artist Redefines Contemporary Art</h2>
-                        <p>Art Magazine International</p>
+                    <div class="press-text">
+                        <p class="press-excerpt">
+                            In-depth coverage of the artist's latest exhibition and their unique approach 
+                            to contemporary art creation...
+                        </p>
+                        <a href="#" class="read-more">Read Full Article <span class="arrow">→</span></a>
                     </div>
                 </div>
-                <div class="featured-quote">
-                    "A groundbreaking approach to mixing traditional and digital techniques..."
-                </div>
-                <p class="press-excerpt">
-                    In-depth coverage of the artist's latest exhibition and their unique approach 
-                    to contemporary art creation...
-                </p>
-                <a href="#" class="read-more">Read Full Article →</a>
             </div>
 
-            <!-- Press Item 2 -->
-            <div class="press-item">
-                <div class="press-header">
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Culture News Logo" class="publication-logo">
-                    <div>
-                        <p class="press-date">May 28, 2024</p>
-                        <h2 class="press-title">The Future of Digital Art</h2>
-                        <p>Culture News Daily</p>
-                    </div>
-                </div>
-                <div class="featured-quote">
-                    "Pushing the boundaries of what's possible in modern art..."
-                </div>
-                <p class="press-excerpt">
-                    Feature article discussing the impact of digital technology on traditional 
-                    art forms and the artist's role in this evolution...
-                </p>
-                <a href="#" class="read-more">Read Full Article →</a>
-            </div>
-
-            <!-- Press Item 3 -->
-            <div class="press-item">
-                <div class="press-header">
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Art Weekly Logo" class="publication-logo">
-                    <div>
-                        <p class="press-date">April 10, 2024</p>
-                        <h2 class="press-title">Interview: Behind the Canvas</h2>
-                        <p>Art Weekly</p>
-                    </div>
-                </div>
-                <div class="featured-quote">
-                    "An intimate look at the creative process..."
-                </div>
-                <p class="press-excerpt">
-                    Exclusive interview revealing the inspiration and techniques behind 
-                    the latest collection...
-                </p>
-                <a href="#" class="read-more">Read Full Article →</a>
-            </div>
         </div>
     </div>
 </body>
