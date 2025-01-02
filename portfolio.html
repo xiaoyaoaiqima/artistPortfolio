@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Section Title */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+            animation-delay: 0.2s;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .filter-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+            animation-delay: 0.4s;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: var(--hover-transform);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .item-overlay {
+            transform: translateY(0);
+        }
+
+        .item-overlay h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+        }
+
+        .item-overlay p {
+            margin: 0;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">My Portfolio</h1>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Digital Art</button>
+            <button class="filter-btn">Paintings</button>
+            <button class="filter-btn">Sculptures</button>
+            <button class="filter-btn">Illustrations</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" alt="Digital Artwork">
+                <div class="item-overlay">
+                    <h3>Ethereal Dreams</h3>
+                    <p>Digital Art, 2024</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968" alt="Modern Painting">
+                <div class="item-overlay">
+                    <h3>Urban Symphony</h3>
+                    <p>Oil on Canvas, 2024</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb" alt="Abstract Art">
+                <div class="item-overlay">
+                    <h3>Natural Harmony</h3>
+                    <p>Mixed Media, 2024</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5" alt="Contemporary Art">
+                <div class="item-overlay">
+                    <h3>Modern Perspectives</h3>
+                    <p>Digital Installation, 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add active class to filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

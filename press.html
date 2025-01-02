@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press & Media - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .press-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .press-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .press-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 1.5rem;
+        }
+
+        .press-date {
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .press-title {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .press-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #2980b9;
+        }
+
+        .featured-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            padding: 1rem;
+            border-left: 4px solid #3498db;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Press & Media Coverage</h1>
+
+        <div class="press-container">
+            <!-- Press Item 1 -->
+            <div class="press-item">
+                <div class="press-header">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Art Magazine Logo" class="publication-logo">
+                    <div>
+                        <p class="press-date">June 15, 2024</p>
+                        <h2 class="press-title">Emerging Artist Redefines Contemporary Art</h2>
+                        <p>Art Magazine International</p>
+                    </div>
+                </div>
+                <div class="featured-quote">
+                    "A groundbreaking approach to mixing traditional and digital techniques..."
+                </div>
+                <p class="press-excerpt">
+                    In-depth coverage of the artist's latest exhibition and their unique approach 
+                    to contemporary art creation...
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+
+            <!-- Press Item 2 -->
+            <div class="press-item">
+                <div class="press-header">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Culture News Logo" class="publication-logo">
+                    <div>
+                        <p class="press-date">May 28, 2024</p>
+                        <h2 class="press-title">The Future of Digital Art</h2>
+                        <p>Culture News Daily</p>
+                    </div>
+                </div>
+                <div class="featured-quote">
+                    "Pushing the boundaries of what's possible in modern art..."
+                </div>
+                <p class="press-excerpt">
+                    Feature article discussing the impact of digital technology on traditional 
+                    art forms and the artist's role in this evolution...
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+
+            <!-- Press Item 3 -->
+            <div class="press-item">
+                <div class="press-header">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="Art Weekly Logo" class="publication-logo">
+                    <div>
+                        <p class="press-date">April 10, 2024</p>
+                        <h2 class="press-title">Interview: Behind the Canvas</h2>
+                        <p>Art Weekly</p>
+                    </div>
+                </div>
+                <div class="featured-quote">
+                    "An intimate look at the creative process..."
+                </div>
+                <p class="press-excerpt">
+                    Exclusive interview revealing the inspiration and techniques behind 
+                    the latest collection...
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Process - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .process-step {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">My Creative Process</h1>
+
+        <div class="process-timeline">
+            <!-- Step 1 -->
+            <div class="process-step">
+                <img src="https://images.unsplash.com/photo-1517971071642-34a2d3ecc9cd" alt="Inspiration" class="step-image">
+                <div class="step-content">
+                    <div class="step-number">01</div>
+                    <h2>Inspiration & Concept</h2>
+                    <p>Every piece begins with gathering inspiration from nature, urban environments, and personal experiences. I create initial sketches and mood boards to develop the concept.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f" alt="Sketching" class="step-image">
+                <div class="step-content">
+                    <div class="step-number">02</div>
+                    <h2>Development</h2>
+                    <p>Through multiple iterations and refinements, the initial concept evolves. This stage involves experimenting with different techniques and materials.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b" alt="Final Creation" class="step-image">
+                <div class="step-content">
+                    <div class="step-number">03</div>
+                    <h2>Creation</h2>
+                    <p>The final artwork comes to life through careful attention to detail and craftsmanship, whether digital or traditional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

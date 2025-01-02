@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Art Gallery - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 2rem 1rem 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .filter-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 25px;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Digital Art Gallery</h1>
+
+        <div class="filter-container">
+            <button class="filter-btn">All</button>
+            <button class="filter-btn">Concept Art</button>
+            <button class="filter-btn">Illustrations</button>
+            <button class="filter-btn">3D Art</button>
+        </div>
+
+        <div class="gallery-container">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1561740331-0bdf39a15d43" alt="Digital Artwork 1" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3>Cyberpunk Dreams</h3>
+                    <p>Digital Illustration, 2024</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d" alt="Digital Artwork 2" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3>Future City</h3>
+                    <p>Concept Art, 2024</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1563089145-599997674d42" alt="Digital Artwork 3" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3>Nature's Interface</h3>
+                    <p>Digital Mixed Media, 2024</p>
+                </div>
+            </div>
+
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+</body>
+</html>

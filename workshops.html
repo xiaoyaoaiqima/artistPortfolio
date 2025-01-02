@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .workshop-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .workshop-card {
+                grid-template-columns: 300px 1fr;
+            }
+        }
+
+        .workshop-image {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            object-fit: cover;
+        }
+
+        .workshop-content {
+            padding: 2rem;
+        }
+
+        .workshop-date {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .workshop-price {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 1rem 0;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background: #2980b9;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .details-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .details-list li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Art Workshops</h1>
+
+        <!-- Workshop 1 -->
+        <div class="workshop-card">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f" alt="Digital Art Workshop" class="workshop-image">
+            <div class="workshop-content">
+                <p class="workshop-date">July 15-16, 2024</p>
+                <h2>Digital Art Masterclass</h2>
+                <p>Learn professional digital art techniques using industry-standard tools.</p>
+                <ul class="details-list">
+                    <li>2-day intensive workshop</li>
+                    <li>All skill levels welcome</li>
+                    <li>Software and tablets provided</li>
+                    <li>Limited to 12 participants</li>
+                </ul>
+                <p class="workshop-price">$299</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Workshop 2 -->
+        <div class="workshop-card">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Oil Painting Workshop" class="workshop-image">
+            <div class="workshop-content">
+                <p class="workshop-date">August 5-7, 2024</p>
+                <h2>Oil Painting Fundamentals</h2>
+                <p>Master the basics of oil painting in this comprehensive workshop.</p>
+                <ul class="details-list">
+                    <li>3-day workshop</li>
+                    <li>Beginner friendly</li>
+                    <li>All materials included</li>
+                    <li>Maximum 8 participants</li>
+                </ul>
+                <p class="workshop-price">$399</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Studio Tour - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .studio-section {
+            margin-bottom: 4rem;
+        }
+
+        .studio-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .space-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .space-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .space-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .space-info {
+            padding: 1.5rem;
+        }
+
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .equipment-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Virtual Studio Tour</h1>
+
+        <!-- Main Studio Space -->
+        <div class="studio-section">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f" alt="Main Studio" class="studio-image">
+            <h2>Welcome to My Creative Space</h2>
+            <p>A 1000 sq ft studio designed to accommodate both traditional and digital art creation...</p>
+        </div>
+
+        <!-- Different Areas -->
+        <div class="space-grid">
+            <div class="space-card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Painting Area" class="space-image">
+                <div class="space-info">
+                    <h3>Painting Station</h3>
+                    <p>Natural lighting and ventilation for oil and acrylic work</p>
+                </div>
+            </div>
+
+            <div class="space-card">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="Digital Studio" class="space-image">
+                <div class="space-info">
+                    <h3>Digital Workshop</h3>
+                    <p>State-of-the-art equipment for digital art creation</p>
+                </div>
+            </div>
+
+            <div class="space-card">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="Gallery Space" class="space-image">
+                <div class="space-info">
+                    <h3>Gallery Area</h3>
+                    <p>Display space for finished works and client meetings</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Section -->
+        <div class="studio-section">
+            <h2>Studio Equipment</h2>
+            <div class="equipment-list">
+                <div class="equipment-item">
+                    <h4>Digital Tools</h4>
+                    <ul>
+                        <li>Wacom Cintiq Pro</li>
+                        <li>iMac Pro</li>
+                        <li>Professional Camera</li>
+                    </ul>
+                </div>
+                <div class="equipment-item">
+                    <h4>Traditional Tools</h4>
+                    <ul>
+                        <li>Professional Easels</li>
+                        <li>Oil Paint Collection</li>
+                        <li>Canvas Selection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

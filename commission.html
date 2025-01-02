@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissions - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .commission-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .commission-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #3498db;
+            margin: 1rem 0;
+        }
+
+        .commission-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .commission-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .commission-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Commission Your Artwork</h1>
+
+        <div class="commission-types">
+            <!-- Digital Art -->
+            <div class="commission-card">
+                <img src="https://images.unsplash.com/photo-1561740331-0bdf39a15d43" alt="Digital Art" class="commission-image">
+                <h2>Digital Art</h2>
+                <p class="price">From $300</p>
+                <ul class="feature-list">
+                    <li>High-resolution digital file</li>
+                    <li>2 revision rounds</li>
+                    <li>Commercial rights available</li>
+                    <li>Delivery within 2 weeks</li>
+                </ul>
+                <a href="#" class="commission-btn">Request Commission</a>
+            </div>
+
+            <!-- Traditional Painting -->
+            <div class="commission-card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Traditional Art" class="commission-image">
+                <h2>Oil Painting</h2>
+                <p class="price">From $800</p>
+                <ul class="feature-list">
+                    <li>Original artwork</li>
+                    <li>Size up to 24x36 inches</li>
+                    <li>Includes shipping</li>
+                    <li>Delivery within 4 weeks</li>
+                </ul>
+                <a href="#" class="commission-btn">Request Commission</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

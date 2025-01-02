@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Shop - 竺柳汝</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-header {
+            position: relative;
+            height: 40vh;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .shop-header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .shop-header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+        }
+
+        .shop-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: var(--light-bg);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="shop-header">
+            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1200" 
+                 alt="Art Shop Banner" 
+                 class="shop-header-image">
+            <div class="shop-header-content">
+                <h1 class="shop-title">Art Shop</h1>
+                <p>Explore Unique Artworks</p>
+            </div>
+        </div>
+
+        <div class="category-filter">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Prints</button>
+            <button class="filter-btn">Originals</button>
+            <button class="filter-btn">Limited Edition</button>
+            <button class="filter-btn">Digital Art</button>
+        </div>
+
+        <div class="shop-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe" 
+                         alt="Urban Dreams Artwork" 
+                         class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Limited Edition Print</span>
+                    <h3 class="product-title">Urban Dreams #1</h3>
+                    <p>Limited Edition Print (50/100)</p>
+                    <p class="product-price">$980</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853" 
+                         alt="Nature's Whisper" 
+                         class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Original Oil Painting</span>
+                    <h3 class="product-title">Nature's Whisper</h3>
+                    <p>Original Oil Painting</p>
+                    <p class="product-price">$1,580</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1574182245530-967d9b3831af" 
+                         alt="Digital Flow" 
+                         class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Digital Art</span>
+                    <h3 class="product-title">Digital Flow</h3>
+                    <p>High-Quality Fine Art Print</p>
+                    <p class="product-price">$580</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

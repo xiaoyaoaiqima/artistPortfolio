@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Art Gallery - Artist Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (keeping same base styles as index.html) ... */
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .artwork-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .artwork-details {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .artwork-medium {
+            color: #3498db;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .filter-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 25px;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Galleries</a>
+                <div class="dropdown-content">
+                    <a href="gallery-digital.html">Digital Art</a>
+                    <a href="gallery-traditional.html">Traditional Art</a>
+                </div>
+            </li>
+            <li><a href="exhibitions.html" class="nav-link">Exhibitions</a></li>
+            <li><a href="collections.html" class="nav-link">Collections</a></li>
+            <li><a href="workshops.html" class="nav-link">Workshops</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
+            <li><a href="studio.html" class="nav-link">Studio</a></li>
+            <li><a href="press.html" class="nav-link">Press</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="section-title">Traditional Art Gallery</h1>
+
+        <div class="filter-container">
+            <button class="filter-btn">All</button>
+            <button class="filter-btn">Oil Paintings</button>
+            <button class="filter-btn">Watercolor</button>
+            <button class="filter-btn">Sculptures</button>
+        </div>
+
+        <div class="gallery-container">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" alt="Oil Painting" class="gallery-image">
+                <div class="gallery-info">
+                    <h3 class="artwork-title">Sunset Meadows</h3>
+                    <p class="artwork-details">Created in 2024</p>
+                    <p class="artwork-medium">Oil on Canvas, 24" x 36"</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d" alt="Watercolor" class="gallery-image">
+                <div class="gallery-info">
+                    <h3 class="artwork-title">Morning Mist</h3>
+                    <p class="artwork-details">Created in 2024</p>
+                    <p class="artwork-medium">Watercolor on Paper, 18" x 24"</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c" alt="Sculpture" class="gallery-image">
+                <div class="gallery-info">
+                    <h3 class="artwork-title">Bronze Dreams</h3>
+                    <p class="artwork-details">Created in 2023</p>
+                    <p class="artwork-medium">Bronze Sculpture, 12" height</p>
+                </div>
+            </div>
+
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+</body>
+</html>
